@@ -1,2 +1,7 @@
 src/raw_lections/*
-.idea/*
+.idea/
+out/production/homework/
+scala_corse_beginner1.iml
+src/homework/homework.iml
+src/lections/lections.iml
+src/scala_corse_beginner.iml
