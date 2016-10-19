@@ -1,2 +1,6 @@
 src/raw_lections/*
-.idea/*
+.idea/
+*.iml
+out/production/homework/
+!src/homework/homework.iml
+out/
