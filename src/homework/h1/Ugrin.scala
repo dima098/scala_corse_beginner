@@ -8,10 +8,8 @@ object Ugrin extends App{
       0
     } else {
       var tempMin: Double = args.head
-      for (p <- args.tail) {
-        if (tempMin > p) {
+      for (p <- args.tail if tempMin > p) {
           tempMin = p
-        }
       }
       tempMin
     }
@@ -26,10 +24,8 @@ object Ugrin extends App{
       0
     } else {
       var tempMin: Double = args.head
-      for (p <- args.tail) {
-        if (tempMin < p) {
+      for (p <- args.tail if tempMin < p) {
           tempMin = p
-        }
       }
       tempMin
     }
@@ -71,10 +67,17 @@ object Ugrin extends App{
 //    выводит на экран с помощью функции вывода результат применения функции обработки к списку параметров
 //    Предусмотрите значения по умолчанию
 
-  def echo(data: Double, tool: (Double) => Unit) = {
-    tool(data)
-  }
-  echo(123, write)
+
+  def strategy(
+              echo: (Double) => Unit,
+              transformer:(Seq[Double]) => Double,
+              args: Double*
+
+              ):Unit = echo(transformer(args))
+
+  println("strategy: --------")
+  strategy(say, findMin, 1,2,3,4,5,2234234,234,234234,234,2)
+
 
 
 //   6) Напишите функцию, которая выводит на экран N первых простых чисел
